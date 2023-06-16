@@ -5,6 +5,6 @@ import java.util.UUID;
 public abstract class SensorCreator {
 
 	public abstract Sensor createSensor(UUID sensorId, double latitude,
-			double longitude, double level);
+			double longitude);
 
 }

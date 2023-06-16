@@ -1,7 +1,5 @@
 package nestorcicardini.D15.sensor;
 
-import java.util.UUID;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +16,8 @@ public class SensorRunner implements CommandLineRunner {
 		String sensorType = "Smoke";
 
 		if (sensorType.equals("Smoke")) {
-			createdSensor = new SmokeSensorCreator()
-					.createSensor(UUID.randomUUID(), 12.123, 20.564, 5.2);
+//			createdSensor = new SmokeSensorCreator()
+//					.createSensor(UUID.randomUUID(), 12.123, 20.564);
 
 			// In questo caso non ho creato piu factory perche non veniva
 			// richiesto nella traccia
@@ -33,7 +31,7 @@ public class SensorRunner implements CommandLineRunner {
 //			34.432, 1.2);
 		}
 
-		createdSensor.getSensorInfo();
+//		createdSensor.getSensorInfo();
 	}
 
 }

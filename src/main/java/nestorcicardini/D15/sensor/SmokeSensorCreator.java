@@ -5,10 +5,10 @@ import java.util.UUID;
 public class SmokeSensorCreator extends SensorCreator {
 
 	@Override
-	public Sensor createSensor(UUID sensorId, double latitude, double longitude,
-			double smokeLevel) {
+	public Sensor createSensor(UUID sensorId, double latitude,
+			double longitude) {
 		System.out.println("New SmokeSensor created successfully");
-		return new SmokeSensor(sensorId, latitude, longitude, smokeLevel);
+		return new SmokeSensor(sensorId, latitude, longitude);
 	}
 
 }
