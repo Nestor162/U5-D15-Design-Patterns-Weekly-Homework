@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import nestorcicardini.D15.ControlCenter;
 import nestorcicardini.D15.sensor.Sensor;
 
 // Questa classe si occupa di gestire le sonde 
@@ -16,7 +15,6 @@ import nestorcicardini.D15.sensor.Sensor;
 @NoArgsConstructor
 @Component
 public class FireAlarm implements Subscriber {
-	private String alarmMsg;
 
 	@Autowired
 	private ControlCenter controlCenter;
@@ -24,10 +22,8 @@ public class FireAlarm implements Subscriber {
 	@Override
 	public void update(Sensor sensor) {
 		if (sensor.getLevel() > 5) {
-//			controlCenter.getNotification(sensor);
-			System.out
-					.println("ALERT! The smoke sensor '" + sensor.getSensorId()
-							+ "' has exceeded the allowed smoke level.");
+			controlCenter.getNotification(sensor);
+
 		}
 	}
 
