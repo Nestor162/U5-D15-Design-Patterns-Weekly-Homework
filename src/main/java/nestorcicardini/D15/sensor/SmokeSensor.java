@@ -16,9 +16,4 @@ public class SmokeSensor extends Sensor {
 
 	}
 
-	@Override
-	public void update(Sensor sensor) {
-		System.out.println("ALERT!");
-	}
-
 }

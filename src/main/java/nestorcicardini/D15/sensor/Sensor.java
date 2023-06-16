@@ -15,7 +15,7 @@ import nestorcicardini.D15.alarm.Subscriber;
 @Setter
 @AllArgsConstructor
 @Component
-public abstract class Sensor implements Subscriber {
+public abstract class Sensor {
 	private UUID sensorId;
 	private double latitude;
 	private double longitude;
