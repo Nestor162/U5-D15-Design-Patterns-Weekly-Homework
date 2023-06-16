@@ -1,4 +1,4 @@
-package nestorcicardini.D15;
+package nestorcicardini.D15.alarm;
 
 import org.springframework.stereotype.Component;
 
