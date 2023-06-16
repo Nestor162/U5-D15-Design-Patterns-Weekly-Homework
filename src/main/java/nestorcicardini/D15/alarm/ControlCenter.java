@@ -1,11 +1,16 @@
 package nestorcicardini.D15.alarm;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import nestorcicardini.D15.proxy.ProxyNotifier;
 import nestorcicardini.D15.sensor.Sensor;
 
 @Component
 public class ControlCenter {
+
+	@Autowired
+	ProxyNotifier proxyNotifier;
 
 	public void getNotification(Sensor sensor) {
 		System.out.println("ALERT! The smoke sensor '" + sensor.getSensorId()
@@ -14,10 +19,10 @@ public class ControlCenter {
 	}
 
 	private void triggerAlarm(Sensor sensor) {
-		String url = "http://host/alarm?sensorId=" + sensor.getSensorId()
-				+ "&lat=" + sensor.getLatitude() + "&lon="
-				+ sensor.getLongitude() + "&smokeLevel=" + sensor.getLevel();
-		System.out.println("Sending alarm: " + url);
+
+		proxyNotifier.notify(sensor.getSensorId(), sensor.getLatitude(),
+				sensor.getLongitude(), sensor.getLevel());
+//		System.out.println("Sending alarm: " + url);
 	}
 
 }
